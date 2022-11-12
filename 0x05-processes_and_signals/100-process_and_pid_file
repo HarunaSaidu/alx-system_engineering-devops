@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env bash
 # dummy what puts PID in file, says things in response to signals
 file=/var/run/holbertonscript.pid
@@ -9,3 +10,16 @@ while true; do
 	echo "To infinity and beyond"
 	sleep 2
 done
+=======
+#!/usr/bin/env bash
+# dummy what puts PID in file, says things in response to signals
+file=/var/run/holbertonscript.pid
+trap 'echo Y U no love me?!' SIGINT
+trap 'rm $file; exit' SIGQUIT
+trap 'echo I hate the kill command; rm $file; exit' SIGTERM
+echo $$ > "$file"
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
+>>>>>>> 2633cb7a463e15b1562aed141a6e9296fdd5a179
